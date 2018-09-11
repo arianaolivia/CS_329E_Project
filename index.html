@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Rock, Paper, Scissors</title>
-
+    
+    <script> 
+        function compHandsP(){
+            var hand = 0
+            var x =  Math.floor(Math.random() * 3);    
+            document.write(hand);
+            document.write(x);
+        
+        }
+                
+    
+    </script>
 
 </head>
 <body>
     <h1>Rock, Paper, Scissors!</h1>
     
+    
+    
+    <input type="button" onclick="compHandsP()" value="Paper" > 
+    <input type="button" onclick="compHandsS()" value="Scissors" > 
+    <input type="button" onclick="compHandsR()" value="Rock" > 
 
+   <script> 
+    // paper =0
+    //scissors = 1
+    // rock = 2
+    </script>
+   
+   
     <script src="main.js"> </script>
                 
 </body>
