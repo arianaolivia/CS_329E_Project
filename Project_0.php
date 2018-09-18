@@ -7,8 +7,7 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-        echo $target_file;
-        echo "fileToUpload";
+        echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
         echo "File is not an image.";
@@ -16,3 +15,21 @@ if(isset($_POST["submit"])) {
     }
 }
 ?>
+
+<html>
+<body>
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+</body>
+</html>
+
+/**
+ * User: Cryptococcus
+ * Date: 9/11/2018
+ * Time: 4:25 PM
+ */

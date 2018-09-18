@@ -1,4 +1,7 @@
-    function compPick(){
+     var winCounter = 0
+    
+     
+     function compPick(){
             var randNum =  Math.floor(Math.random() * 3);
 
             if(randNum == 0){
@@ -21,6 +24,8 @@
             }
             if(user == "Paper" && comp =="Rock"){
                 document.write('User wins!')
+                winCounter++
+                document.write(winCounter)
             }
             if(user == "Paper" && comp =="Scissors"){
                 document.write('Computer wins!')
@@ -30,16 +35,19 @@
             }
             if(user == "Scissors" && comp =="Paper"){
                 document.write('User wins!')
+                winCounter++
+                document.write(winCounter)
             }
             if(user == "Rock" && comp =="Paper"){
                 document.write('Computer wins!')
             }
             if(user == "Rock" && comp =="Scissors"){
                 document.write('User wins!')
+                winCounter++
+                document.write(winCounter)
             }
 
         }
-
 
 
         function userPaper(){
@@ -60,4 +68,6 @@
             var compHand = compPick()
             winCondition(userHand,compHand)
         }
+
+
 
