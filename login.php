@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
 $servername="localhost";
-$username="root";
-$password="";
+$username="crypzzhj";
+$password="D7iqck9yZMdr";
 $dbname="crypzzhj_userlogin";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 echo "connection";
@@ -14,18 +14,18 @@ $query="SELECT * FROM userlogin WHERE username='".$username."' and password='".$
 $result = mysqli_query($conn, $query);
 if($result){
 while($row = mysqli_fetch_array($result)){
-    echo '<script type="text/javascript">alert("you are logined successfully and you are logined as '. $row['usertype'] . '")</script>';
+    echo '<script type="text/javascript">alert("you are logged in successfully and you are logged in as '. $row['usertype'] . '")</script>';
 }
 if($usertype=="admin"){
 ?>
 <script type="text/javascript">
-    window.location.href = "RPG_game.php";
+    window.location.href = "RPS_game.php";
 </script>
 <?php
 }else{
     ?>
     <script type="text/javascript">
-        window.location.href = "RPG_game.php";
+        window.location.href = "RPS_game.php";
     </script>
     <?php
 }
