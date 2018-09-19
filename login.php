@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
 $servername="localhost";
-$username="root";
-$password="";
-$dbname="userlogins";
+$username="crypzzhj";
+$password=""; //password hidden for security
+$dbname="crypzzhj_userlogin";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 echo "connection";
 if(isset($_POST['Login'])){
@@ -14,26 +14,21 @@ $query="SELECT * FROM userlogin WHERE username='".$username."' and password='".$
 $result = mysqli_query($conn, $query);
 if($result){
 while($row = mysqli_fetch_array($result)){
-    echo '<script type="text/javascript">alert("you are logined successfully and you are logined as '. $row['usertype'] . '")</script>';
+    echo '<script type="text/javascript">alert("you are logged in successfully and you are logged in as '. $row['usertype'] . '")</script>';
 }
-
 if($usertype=="admin"){
 ?>
 <script type="text/javascript">
-
-    window.location.href = "admin.php";
+    window.location.href = "RPS_game.php";
 </script>
 <?php
-
 }else{
     ?>
     <script type="text/javascript">
-
-        window.location.href = "user.php";
+        window.location.href = "RPS_game.php";
     </script>
     <?php
 }
-
 }else{
     echo 'no result';
 }
