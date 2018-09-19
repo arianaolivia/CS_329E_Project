@@ -3,7 +3,7 @@
 $servername="localhost";
 $username="root";
 $password="";
-$dbname="userlogins";
+$dbname="crypzzhj_userlogin";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 echo "connection";
 if(isset($_POST['Login'])){
@@ -16,24 +16,19 @@ if($result){
 while($row = mysqli_fetch_array($result)){
     echo '<script type="text/javascript">alert("you are logined successfully and you are logined as '. $row['usertype'] . '")</script>';
 }
-
 if($usertype=="admin"){
 ?>
 <script type="text/javascript">
-
-    window.location.href = "admin.php";
+    window.location.href = "RPG_game.php";
 </script>
 <?php
-
 }else{
     ?>
     <script type="text/javascript">
-
-        window.location.href = "user.php";
+        window.location.href = "RPG_game.php";
     </script>
     <?php
 }
-
 }else{
     echo 'no result';
 }
