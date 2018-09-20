@@ -1,26 +1,22 @@
 <?php
     
     function createZero(){
-        $myfile = fopen("C:\txtFile\newfile.txt", "w") or die("Unable to open file!");
+        $my_file = 'newfile.txt';
+        $handle = fopen($my_file, "w") or die("Unable to open file!");
         $numWins = "0";
-        fwrite($myfile, $numWins);
-        fclose($myfile);      
+        fwrite($handle, $numWins);
+        fclose($handle);      
     }
     
-
     
     function addWin(){
-        $myfile = fopen("C:\txtFile\newfile.txt", "r+") or die("Unable to open file!");
-        $wins = fgets($myfile)
-        $winCount = settype($wins, 'integer')
-        $winCount++
+        $myfile = fopen("newfile.txt", "r+") or die("Unable to open file!");
+        $wins = fgets($myfile);
+        $winCount = settype($wins, 'int');
+        $winCount++ ;
         fwrite($myfile, $winCount);
         fclose($myfile);
-        return $winCount;
-        
+        return $winCount;        
      } 
-    
-createZero();
-
 
 ?> 
