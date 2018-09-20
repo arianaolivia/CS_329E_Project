@@ -18,6 +18,13 @@
         function winCondition(user,comp){
             document.write("User picked: " + user + "<br/>")
             document.write("Computer picked: " + comp + "<br/>")
+            
+            if (user == "Gun"){
+                document.write('User wins!')
+                winCounter++
+                document.write(winCounter)
+            }
+            
 
             if(user == comp){
                 document.write('No winner, go again bois!')
@@ -69,5 +76,10 @@
             winCondition(userHand,compHand)
         }
 
+        function userGun(){
+            var userHand = "Gun"
+            var compHand = compPick()
+            winCondition(userHand,compHand)
 
+        }
 
