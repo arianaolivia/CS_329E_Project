@@ -1,4 +1,3 @@
-     var winCounter = 0
 
      /** Cryptococcus; setting a cookie that can be pulled on the game page */
      function setCookie(cookieName, cookieValue, expTime){
@@ -31,37 +30,38 @@
             
             if (user == "Gun"){
                 document.write('User wins!')
-                winCounter++
-                document.write(winCounter)
+                addWin();
+                
             }
-            
 
             if(user == comp){
                 document.write('No winner, go again bois!')
             }
             if(user == "Paper" && comp =="Rock"){
                 document.write('User wins!')
-                winCounter++
-                document.write(winCounter)
+                addWin();   
             }
+            
             if(user == "Paper" && comp =="Scissors"){
-                document.write('Computer wins!')
+                document.write('Computer wins!')    
             }
+            
             if(user == "Scissors" && comp =="Rock"){
-                document.write('Computer wins!')
+                document.write('Computer wins!')    
             }
+            
             if(user == "Scissors" && comp =="Paper"){
                 document.write('User wins!')
-                winCounter++
-                document.write(winCounter)
+                addWin();
             }
+            
             if(user == "Rock" && comp =="Paper"){
                 document.write('Computer wins!')
             }
+            
             if(user == "Rock" && comp =="Scissors"){
                 document.write('User wins!')
-                winCounter++
-                document.write(winCounter)
+                addWin();
             }
 
         }
@@ -92,3 +92,23 @@
             winCondition(userHand,compHand)
 
         }
+
+  
+function addWin(){
+        // extract cookie string and isolate number string
+        var x = document.cookie
+        x = x.substring(9);
+        x = Number(x)
+        x++
+        x = x.toString();
+        document.cookie = "winCount = " + x        
+    }
+
+
+
+
+
+
+
+
+
