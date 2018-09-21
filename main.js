@@ -1,6 +1,16 @@
      var winCounter = 0
-    
-     
+
+     /** Cryptococcus; setting a cookie that can be pulled on the game page */
+     function setCookie(cookieName, cookieValue, expTime){
+         var date = new Date();
+         date.setTime(date.getTime() + (expTime*24*60*60*1000));
+         var expires = "expires=" + date.toUTCString();
+         document.cookie = cookieName + "=" + cookieValue + ";" + expTime + ";path=/"
+     }
+     /** Cryptococcus; geteing a cookie that can be associated with user login */
+
+
+
      function compPick(){
             var randNum =  Math.floor(Math.random() * 3);
 
@@ -82,4 +92,3 @@
             winCondition(userHand,compHand)
 
         }
-

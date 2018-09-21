@@ -41,18 +41,6 @@ else{
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>User Login</title>
-
-    /** Cryptococcus; setting a cookie that can be pulled on the game page */
-    <script>
-
-        function setCookie(cookieName, cookieValue, expTime){
-            var date = new Date();
-            date.setTime(date.getTime() + (expTime*24*60*60*1000));
-            var expires = "expires=" + date.toUTCString();
-            document.cookie = cookieName + "=" + cookieValue + ";" + expTime + ";path=/"
-        }
-
-    </script>
 </head>
 
 <form method="POST">
