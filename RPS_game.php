@@ -9,22 +9,19 @@
 <body>
 <h1>Rock, Paper, Scissors!</h1>
 
+
 <input type="button" onclick="location.href='paper.html'" value="Paper">
 <input type="button" onclick="location.href='scissors.html'" value="Scissors">
 <input type="button" onclick="location.href='rock.html'" value="Rock">
 
-   
-
-    <script src="main.js"> </script>
+    
+    <script src="main.js"></script>
     <script>
-        document.write("Win Counter " + winCounter )
+        var wins = document.cookie
+        wins = wins.substring(9);
+        wins = Number(wins)
+        document.write("Wins = " + wins);
     </script>
-    
-    
-    <?php include 'test.php';
-    createZero();
-    addWin();
-    ?>
     
 
 
