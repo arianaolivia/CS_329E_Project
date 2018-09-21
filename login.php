@@ -42,6 +42,11 @@ else{
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>User Login</title>
 </head>
+    
+    <script>
+         document.cookie = "winCount = 0"
+    </script>
+    
 
 <form method="POST">
     <table>
