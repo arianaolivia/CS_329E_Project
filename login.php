@@ -6,34 +6,27 @@ $password="D7iqck9yZMdr";
 $dbname="crypzzhj_userlogin";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if(isset($_POST['Login'])){
-$username=$_POST['user'];
-$password=$_POST['pass'];
-$usertype=$_POST['usertype'];
-$query="SELECT * FROM userlogin WHERE username='".$username."' and password='".$password."' and usertype='".$usertype."'";
-$result = mysqli_query($conn, $query);
-if($result==TRUE){
-    if($row = mysqli_fetch_array($result)){
-        echo '<script type="text/javascript">alert("Success! You are logged in as '. $username . ' and you have *'.$row['usertype'].'* access")</script>';
-if($usertype=="admin"){
-?>
-<script type="text/javascript">
-    window.location.href = "RPS_game_admin.html";
-</script>
-<?php
-}
-if($usertype=="user"){
-    ?>
-    <script type="text/javascript">
-        window.location.href = "RPS_game.php";
-    </script>
-    <?php
-}
-}
-
-else{
-    echo 'Password and username do not match. Please try again or create a new account.'; //create new not yet finished
-}
-}
+    $username=$_POST['user'];
+    $password=$_POST['pass'];
+    $usertype=$_POST['usertype'];
+    $query="SELECT * FROM userlogin WHERE username='".$username."' and password='".$password."' and usertype='".$usertype."'";
+    $result = mysqli_query($conn, $query);
+    if($result==TRUE){
+        if($row = mysqli_fetch_array($result)){
+            echo '<script type="text/javascript">alert("Success! You are logged in as '. $username . ' and you have *'.$row['usertype'].'* access")</script>';
+                if($usertype=="admin"){
+                    setcookie($username, $usertype, time()+3600);
+                    header("Location:../RPS_game_admin.html");
+                    exit();
+                }elseif($usertype=="user"){
+                    setcookie($username, $usertype, time()+3600);
+                    header("Location:../RPS_game.php");
+                    exit();
+                }
+        }else{
+            echo 'Password and username do not match. Please try again or create a new account.'; //create new not yet finished
+        }
+    }
 }
 ?>
 
@@ -42,19 +35,14 @@ else{
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>User Login</title>
 </head>
-    
-    <script>
-         document.cookie = "winCount = 0"
-    </script>
-    
 
 <form method="POST">
     <table>
         <tr>
-            <td>Username:<input type="TEXT" name="user" placeholder="enter username"></td>
+            <td>Username:<input type="username" name="user" placeholder="enter username"></td>
         </tr>
         <tr>
-            <td>Password:<input type="TEXT" name="pass" placeholder="enter password"></td>
+            <td>Password:<input type="password" name="pass" placeholder="enter password"></td>
         </tr>
         <tr>
             <td>Select user type:<select name="usertype">
