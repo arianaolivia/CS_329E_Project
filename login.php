@@ -15,13 +15,15 @@ if($result==TRUE){
     if($row = mysqli_fetch_array($result)){
         echo '<script type="text/javascript">alert("Success! You are logged in as '. $username . ' and you have *'.$row['usertype'].'* access")</script>';
 if($usertype=="admin"){
-?>
+    setcookie($username, $usertype, time()+3600)
+    ?>
 <script type="text/javascript">
     window.location.href = "RPS_game_admin.html";
 </script>
 <?php
 }
 if($usertype=="user"){
+    setcookie($username, $usertype, time()+3600)
     ?>
     <script type="text/javascript">
         window.location.href = "RPS_game.php";
@@ -42,11 +44,6 @@ else{
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>User Login</title>
 </head>
-    
-    <script>
-         document.cookie = "winCount = 0"
-    </script>
-    
 
 <form method="POST">
     <table>
