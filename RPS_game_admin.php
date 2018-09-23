@@ -1,8 +1,8 @@
 <head>
+    
+    Hi, admin! ;)
     <meta charset="UTF-8">
     <title>Rock, Paper, Scissors</title>
-    
-
 
 </head>
 <body>
