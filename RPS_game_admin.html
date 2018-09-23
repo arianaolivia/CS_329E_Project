@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock, Paper, Scissors</title>
+    
+    <link rel="stylesheet" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet"> 
+
+</head>
+<body>
+    <h1>
+       <div id="title">
+        Rock, Paper, Scissors!
+        </div>
+    </h1>
+    
+    <h2>
+        Pick your poisson!
+    </h2>
+
+
+<div id="button">
+    <input class="input" type="button" onclick="location.href='paper_admin.html'" value="Paper">
+    
+    
+    <input class="input" type="button" onclick="location.href='scissors_admin.html'" value="Scissors">
+    
+    
+    <input class="input" type="button" onclick="location.href='rock_admin.html'" value="Rock">
+
+
+    <input class="input" type="button" onclick="location.href='gun.html'" value="Gun">
+</div>
+  
+   
+
+    <script src="main.js"></script>
+    <script>
+        var wins = getCookie('winCount');
+        wins = Number(wins);
+        document.write("Wins = " + wins);
+    </script>
+
+
+
+<br/>
+<br/>
+<br/>
+<form method="POST" action="logout.php">
+    <input type="submit" value="Log out">
+</form>
+
+
+
+</body>
+</html>

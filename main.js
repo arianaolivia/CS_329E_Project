@@ -1,4 +1,5 @@
      /** Cryptococcus; setting a cookie that can be pulled on the game page */
+
     function getCookie(cname) {
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
@@ -23,7 +24,7 @@
 
             if(randNum === 0){
                 return "Paper";
-            }
+            }s
             if(randNum == 1){
                 return "Scissors";
             }
@@ -37,7 +38,7 @@
             document.write("Computer picked: " + comp + "<br/>");
             
             if (user == "Gun"){
-                document.write('User wins!');
+                document.write('<h1>User winssss!</h1>');
                 addWin();
                 
             }
