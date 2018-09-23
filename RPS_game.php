@@ -22,11 +22,12 @@
     <!-- cookie is null to start, needs to be set to 0 to start -->
     <script src="main.js"></script>
     <script>
-        var wins = document.cookie
-        wins = wins.substring(9);
+        var wins = getCookie('winCount')
         wins = Number(wins);
         document.write("Wins = " + wins);
     </script>
+    
+    
 
 <br/>    
 <form method="POST" action="logout.php">
