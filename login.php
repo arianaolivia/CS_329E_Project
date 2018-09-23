@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <?php
 $servername="localhost";
-$username="crypzzhj";
-$password="D7iqck9yZMdr";
-$dbname="crypzzhj_userlogin";
+$username=""; //removed for security
+$password=""; //removed for security
+$dbname=""; //removed for security
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if(isset($_POST['Login'])){
     $username=$_POST['user'];
@@ -13,11 +13,10 @@ if(isset($_POST['Login'])){
     $result = mysqli_query($conn, $query);
     if($result==TRUE){
         if($row = mysqli_fetch_array($result)){
-            echo '<script type="text/javascript">alert("Success! You are logged in as '. $username . ' and you have *'.$row['usertype'].'* access")</script>';
-                setcookie("usertype", $usertype, time()+3600);
-                setcookie("username", $username);
-                header("Location:../index.php");
-                exit();
+            setcookie("usertype", $usertype, time()+3600);
+            setcookie("username", $username);
+            header("Location:../index.php");
+            exit();
         }else{
             echo 'Password and username do not match. Please try again.'; //create new not yet finished
         }
