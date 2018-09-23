@@ -1,17 +1,33 @@
+<html lang="en">
 <head>
-    Welcome to Rock, Paper, Scissors!
     <meta charset="UTF-8">
     <title>Rock, Paper, Scissors</title>
+    
+    <link rel="stylesheet" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet"> 
 </head>
-
 <body>
-<h1>Rock, Paper, Scissors!</h1>
+    <h1>
+       <div id="title">
+        Rock, Paper, Scissors!
+        </div>
+    </h1>
+    
+    <h2>
+        Pick your poisson!
+    </h2>
 
-<input type="button" onclick="location.href='paper.html'" value="Paper">
-<input type="button" onclick="location.href='scissors.html'" value="Scissors">
-<input type="button" onclick="location.href='rock.html'" value="Rock">
+<?php if($_COOKIE["usertype"] == "admin") : ?>
+    <input type="button" onclick="location.href='paper_admin.html'" value="Paper">
+    <input type="button" onclick="location.href='scissors_admin.html'" value="Scissors">
+    <input type="button" onclick="location.href='rock_admin.html'" value="Rock">
+    <input type="button" onclick="location.href='gun.html'" value="Gun">
+<?php else : ?>
+    <input type="button" onclick="location.href='paper.html'" value="Paper">
+    <input type="button" onclick="location.href='scissors.html'" value="Scissors">
+    <input type="button" onclick="location.href='rock.html'" value="Rock">
+<?php endif; ?>
 
-    <!-- cookie is null to start, needs to be set to 0 to start -->
     <script src="main.js"></script>
     <script>
         var wins = getCookie('winCount');
