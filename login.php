@@ -16,11 +16,13 @@ if(isset($_POST['Login'])){
             echo '<script type="text/javascript">alert("Success! You are logged in as '. $username . ' and you have *'.$row['usertype'].'* access")</script>';
                 if($usertype=="admin"){
                     setcookie("usertype", $usertype, time()+3600);
-                    header("Location:../RPS_game_admin.html");
+                    setCookie("username", $username);
+                    header("Location:../RPS_game_admin.php");
                     exit();
                 }elseif($usertype=="user"){
                     setcookie("usertype", $usertype, time()+3600);
-                    header("Location:../RPS_game.php");
+                    setCookie("username", $username);
+                    header("Location:../index.php");
                     exit();
                 }
         }else{
@@ -35,12 +37,6 @@ if(isset($_POST['Login'])){
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>User Login</title>
 </head>
-
-    <script>
-         document.cookie = "winCount = 0"
-    </script>
-
-
 
 <form method="POST">
     <table>
@@ -65,5 +61,3 @@ if(isset($_POST['Login'])){
     On the next page you can upload an image file! </br>
 </body>
 </html>
-
-
