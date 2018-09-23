@@ -3,11 +3,38 @@
          var date = new Date();
          date.setTime(date.getTime() + (expTime*24*60*60*1000));
          var expires = "expires=" + date.toUTCString();
-         document.cookie = cookieName + "=" + cookieValue + ";" + expTime + ";path=/";
+         document.cookie = cookieName + "=" + cookieValue + ";" + expTime + ";path=/"
+         
+         
+         window.readCookie = readCookie;
      }
-     /** Cryptococcus; geteing a cookie that can be associated with user login */
+     /** Cryptococcus; getting a cookie that can be associated with user login */
+     function getCookie(cookieName) {
+         var user = cookieName + "=";
+         var cookieSplit = document.cookie.split(";");
+         for(var counter = 0; counter < cookieSplit.length; counter++) {
+             var currentChar = cookieSplit[counter];
+             while (currentChar.charAt(0) === " ") {
+                 currentChar = currentChar.substring(1);
+             }
+             if (currentChar.indexOf(cookieName) === 0) {
+                 return currentChar.substring(cookieName.length, currentChar.length);
+             }
+         }
+         return "";
+     }
 
+     /**Cryptococcus; check the cookie to make sure user rights are correct */
+     function checkCookie() {
+         var userType = getCookie("usertype");
+         if(userType === "admin"){
 
+         }
+         else{
+             prompt("Please log in again, redirecting you to the login page.");
+
+         }
+     }
 
      function compPick(){
             var randNum =  Math.floor(Math.random() * 3);
@@ -94,11 +121,8 @@
 
   
 function addWin(){
-        // extract cookie string and isolate number string
-        var x = document.cookie;
-        x = x.substring(9);
-        x = Number(x);
-        x++;
-        x = x.toString();
-        document.cookie = "winCount = " + x;        
-    }
+        var wins = document.cookie
+        wins = wins.substring(9);
+        wins = Number(wins);
+        document.write("Wins = " + wins);
+}
