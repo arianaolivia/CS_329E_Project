@@ -32,46 +32,58 @@
             }
         }
 
+      function compPick(){
+            var randNum =  Math.floor(Math.random() * 3);
+
+            if(randNum === 0){
+                return "Paper";
+            };
+            if(randNum == 1){
+                return "Scissors";
+            };
+            if(randNum == 2){
+                return "Rock";
+            };
+        }
+
         function winCondition(user,comp){
-            document.write("User picked: " + user + "<br/>");
-            document.write("Computer picked: " + comp + "<br/>");
+            document.write("<h3>User picked: " + user + "<br/></h3>");
+            document.write("<h3>Computer picked: " + comp + "<br/></h3>");
             
             if (user == "Gun"){
-                document.write('User wins!');
+                document.write('<h3>User wins!</h3>');
                 addWin();
-                
             }
 
             if(user == comp){
-                document.write('No winner, go again bois!')
+                document.write('<h3>No winner, go again bois!</h3>')
             }
             if(user == "Paper" && comp =="Rock"){
-                document.write('User wins!');
+                document.write('<h3>User wins!</h3>');
                 addWin();   
             }
             
             if(user == "Paper" && comp =="Scissors"){
-                document.write('Computer wins!');    
+                document.write('<h3>Computer wins!</h3>');    
             }
             
             if(user == "Scissors" && comp =="Rock"){
-                document.write('Computer wins!');    
+                document.write('<h3>Computer wins!</h3>');    
             }
             
             if(user == "Scissors" && comp =="Paper"){
-                document.write('User wins!');
+                document.write('<h3>User wins!</h3>');
                 addWin();
             }
             
             if(user == "Rock" && comp =="Paper"){
-                document.write('Computer wins!');
+                document.write('<h3>Computer wins!</h3>');
             }
             
             if(user == "Rock" && comp =="Scissors"){
-                document.write('User wins!');
+                document.write('<h3>User wins!</h3>');
                 addWin();
             }
-
         }
 
 
