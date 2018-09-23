@@ -14,19 +14,12 @@ if(isset($_POST['Login'])){
     if($result==TRUE){
         if($row = mysqli_fetch_array($result)){
             echo '<script type="text/javascript">alert("Success! You are logged in as '. $username . ' and you have *'.$row['usertype'].'* access")</script>';
-                if($usertype=="admin"){
-                    setcookie("usertype", $usertype, time()+3600);
-                    setCookie("username", $username);
-                    header("Location:../RPS_game_admin.php");
-                    exit();
-                }elseif($usertype=="user"){
-                    setcookie("usertype", $usertype, time()+3600);
-                    setCookie("username", $username);
-                    header("Location:../index.php");
-                    exit();
-                }
+                setcookie("usertype", $usertype, time()+3600);
+                setcookie("username", $username);
+                header("Location:../index.php");
+                exit();
         }else{
-            echo 'Password and username do not match. Please try again or create a new account.'; //create new not yet finished
+            echo 'Password and username do not match. Please try again.'; //create new not yet finished
         }
     }
 }
@@ -36,6 +29,10 @@ if(isset($_POST['Login'])){
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>User Login</title>
+    
+    <link rel="stylesheet" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet"> 
+    
 </head>
 
 <form method="POST">
@@ -58,6 +55,5 @@ if(isset($_POST['Login'])){
             <td><input type="submit" name="Login" value="Login"></td>
         </tr>
 </form>
-    On the next page you can upload an image file! </br>
 </body>
 </html>
