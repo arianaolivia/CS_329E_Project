@@ -19,14 +19,61 @@
 
 <!-- cryptococcus: this will check if the person logged in is an admin (using cookies) and will display the gun option if they are -->
 <?php if($_COOKIE["usertype"] == "admin") : ?>
-    <input type="button" onclick="location.href='paper.html'" value="Paper">
+    <div id="picture">
+     <img class="options" src="pics/paper.png" alt="Paper from DM.">
+     
+     <img  class="options" src="pics/Scissorhands.png" alt="Edward scissorhands"> 
+    
+     <img  class="options" src="pics/theRock.png" alt="D The Rock Johnson"> 
+
+     <img  class="options" src="pics/gun.png" alt="nerf Gun"> 
+</div>
+
+
+<div id="button">
+    <input class="input" type="button" onclick="location.href='paper_admin.html'" value="Paper">
+    
+    <input class="input" type="button" onclick="location.href='scissors_admin.html'" value="Scissors">
+    
+    <input class="input" type="button" onclick="location.href='rock_admin.html'" value="Rock">
+
+    <input class="input" type="button" onclick="location.href='gun.html'" value="Gun">
+</div>
+   
+   
+   
+   <!-- <input type="button" onclick="location.href='paper.html'" value="Paper">
     <input type="button" onclick="location.href='scissors.html'" value="Scissors">
     <input type="button" onclick="location.href='rock.html'" value="Rock">
-    <input type="button" onclick="location.href='gun.html'" value="Gun">
+    <input type="button" onclick="location.href='gun.html'" value="Gun"> -->
 <?php else : ?>
+  
+      <div id="picture">
+     <img class="options" src="pics/paper.png" alt="Paper from DM."> 
+    
+     <img  class="options" src="pics/Scissorhands.png" alt="Edward scissorhands"> 
+    
+     <img  class="options" src="pics/theRock.png" alt="D The Rock Johnson"> 
+    </div>
+    
+
+<div id="button">
+    <input class="input" type="button" onclick="location.href='paper.html'" value="Paper">
+    
+    <input class="input" type="button" onclick="location.href='scissors.html'" value="Scissors">
+    
+    <input class="input" type="button" onclick="location.href='rock.html'" value="Rock">
+</div>
+   
+   
+   
+   
+   <!--
     <input type="button" onclick="location.href='paper.html'" value="Paper">
     <input type="button" onclick="location.href='scissors.html'" value="Scissors">
     <input type="button" onclick="location.href='rock.html'" value="Rock">
+    -->
+    
 <?php endif; ?>
 
 
@@ -34,8 +81,9 @@
     <script>
         var wins = getCookie('winCount');
         wins = Number(wins);
-        document.write("Wins = " + wins);
+        document.write("<h2>Total Wins = " + wins + "</h2>");
     </script>
+    
     
     
 
