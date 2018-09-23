@@ -1,40 +1,22 @@
      /** Cryptococcus; setting a cookie that can be pulled on the game page */
-     function setCookie(cookieName, cookieValue, expTime){
-         var date = new Date();
-         date.setTime(date.getTime() + (expTime*24*60*60*1000));
-         var expires = "expires=" + date.toUTCString();
-         document.cookie = cookieName + "=" + cookieValue + ";" + expTime + ";path=/"
-         
-         
-         window.readCookie = readCookie;
-     }
-     /** Cryptococcus; getting a cookie that can be associated with user login */
-     function getCookie(cookieName) {
-         var user = cookieName + "=";
-         var cookieSplit = document.cookie.split(";");
-         for(var counter = 0; counter < cookieSplit.length; counter++) {
-             var currentChar = cookieSplit[counter];
-             while (currentChar.charAt(0) === " ") {
-                 currentChar = currentChar.substring(1);
-             }
-             if (currentChar.indexOf(cookieName) === 0) {
-                 return currentChar.substring(cookieName.length, currentChar.length);
-             }
-         }
-         return "";
-     }
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+     /** Cryptococcus; geteing a cookie that can be associated with user login */
 
-     /**Cryptococcus; check the cookie to make sure user rights are correct */
-     function checkCookie() {
-         var userType = getCookie("usertype");
-         if(userType === "admin"){
 
-         }
-         else{
-             prompt("Please log in again, redirecting you to the login page.");
-
-         }
-     }
 
      function compPick(){
             var randNum =  Math.floor(Math.random() * 3);
@@ -120,9 +102,23 @@
         }
 
   
-function addWin(){
-        var wins = document.cookie
-        wins = wins.substring(9);
-        wins = Number(wins);
-        document.write("Wins = " + wins);
-}
+    function addWin(){
+        // extract cookie string and isolate number string
+        var x = getCookie('winCount');
+        x = Number(x)
+        x++;
+        x = x.toString();
+        document.cookie = "winCount = " + x;   
+        
+    
+        // var x = document.cookie;
+        //x = x.substring(9);
+        //x = Number(x);
+        //x++;
+        //x = x.toString();
+        //document.cookie = "winCount = " + x;        
+    }
+
+
+
+

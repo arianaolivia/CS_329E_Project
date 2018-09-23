@@ -36,6 +36,12 @@ if(isset($_POST['Login'])){
     <title>User Login</title>
 </head>
 
+    <script>
+         document.cookie = "winCount = 0"
+    </script>
+
+
+
 <form method="POST">
     <table>
         <tr>

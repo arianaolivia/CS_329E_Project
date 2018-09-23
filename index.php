@@ -23,6 +23,7 @@ if(isset($_POST['Submit1']))
 
 <body>
 
+
 <input type="button" onclick="location.href='RPS_game.php'" value="Enter Game?"><br/>
 <input type="button" onclick="location.href='login.php'" value="Log in!">
 
