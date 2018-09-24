@@ -20,13 +20,13 @@
 <!-- cryptococcus: this will check if the person logged in is an admin (using cookies) and will display the gun option if they are -->
 <?php if($_COOKIE["usertype"] == "admin") : ?>
 <div id="picture">
-     <img class="options" src="pics/paper.png" alt="Paper from DM.">
+     <img class="options" src="images/paper.png" alt="Paper from DM.">
      
-     <img  class="options" src="pics/Scissorhands.png" alt="Edward scissorhands"> 
+     <img  class="options" src="images/Scissorhands.png" alt="Edward scissorhands"> 
     
-     <img  class="options" src="pics/theRock.png" alt="D The Rock Johnson"> 
+     <img  class="options" src="images/theRock.png" alt="D The Rock Johnson"> 
 
-     <img  class="options" src="pics/gun.png" alt="nerf Gun"> 
+     <img  class="options" src="images/gun.png" alt="nerf Gun"> 
 </div>
 
 
@@ -48,13 +48,13 @@
     <input type="button" onclick="location.href='gun.html'" value="Gun"> -->
 <?php else : ?>
   
-      <div id="picture">
-     <img class="options" src="pics/paper.png" alt="Paper from DM."> 
+<div id="picture">
+    <img class="options" src="images/paper.png" alt="Paper from DM.">
+ 
+    <img  class="options" src="images/Scissorhands.png" alt="Edward scissorhands"> 
     
-     <img  class="options" src="pics/Scissorhands.png" alt="Edward scissorhands"> 
-    
-     <img  class="options" src="pics/theRock.png" alt="D The Rock Johnson"> 
-    </div>
+    <img  class="options" src="images/theRock.png" alt="D The Rock Johnson">  
+</div>
     
 
 <div id="button">
