@@ -14,12 +14,12 @@
     </h1>
     
     <h2>
-        Pick your poisson!
+        Pick your poison!
     </h2>
 
 <!-- cryptococcus: this will check if the person logged in is an admin (using cookies) and will display the gun option if they are -->
 <?php if($_COOKIE["usertype"] == "admin") : ?>
-    <div id="picture">
+<div id="picture">
      <img class="options" src="pics/paper.png" alt="Paper from DM.">
      
      <img  class="options" src="pics/Scissorhands.png" alt="Edward scissorhands"> 
@@ -31,11 +31,11 @@
 
 
 <div id="button">
-    <input class="input" type="button" onclick="location.href='paper_admin.html'" value="Paper">
+    <input class="input" type="button" onclick="location.href='paper.html'" value="Paper">
     
-    <input class="input" type="button" onclick="location.href='scissors_admin.html'" value="Scissors">
+    <input class="input" type="button" onclick="location.href='scissors.html'" value="Scissors">
     
-    <input class="input" type="button" onclick="location.href='rock_admin.html'" value="Rock">
+    <input class="input" type="button" onclick="location.href='rock.html'" value="Rock">
 
     <input class="input" type="button" onclick="location.href='gun.html'" value="Gun">
 </div>
